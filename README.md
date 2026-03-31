@@ -1,42 +1,114 @@
 # GestureTalk AI
-A Smart Sign Language Recognition System using Computer Vision and Deep Learning
+A Smart Sign Language Recognition System Using Computer Vision
 
 ---
 
-## Project Overview
-GestureTalk AI is a real-time sign language recognition system that converts hand gestures into text and speech. The system uses MediaPipe for hand detection and a MobileNetV2 deep learning model for gesture classification.
+## Project Description
+GestureTalk AI is an AI-powered web application that detects sign language hand gestures and converts them into text in real time using Computer Vision and Deep Learning.
 
-The goal of this project is to reduce the communication gap between hearing-impaired individuals and others by providing an efficient and intelligent solution.
+The system helps reduce the communication gap between hearing-impaired individuals and others by providing an intelligent and interactive solution.
 
 ---
 
 ## Features
-- Real-time hand gesture recognition using webcam  
-- Image and video-based prediction  
-- Confidence-based filtering for improved accuracy  
-- Smooth and stable predictions  
-- Text generation from gestures  
-- Speech output for detected text  
+- Real-time hand gesture recognition  
+- Image upload for gesture prediction  
+- Video upload for gesture detection  
+- Live webcam gesture recognition  
+- Displays detected text output  
+- Shows prediction confidence score  
+- Converts gestures into sentences  
+- Optional Text-to-Speech functionality  
 
 ---
 
-## Tech Stack
-- Frontend: HTML, CSS, JavaScript  
-- Backend: Flask (Python)  
-- Machine Learning: TensorFlow, Keras  
-- Computer Vision: OpenCV, MediaPipe  
-- Model: MobileNetV2 (Transfer Learning)  
+## Technologies Used
+
+| Technology | Purpose |
+|-----------|--------|
+| Python | Backend development |
+| Flask | Web application framework |
+| TensorFlow / Keras | Deep learning model |
+| OpenCV | Image processing |
+| MediaPipe | Hand detection |
+| NumPy | Numerical computations |
+| HTML | Webpage structure |
+| CSS | User interface design |
+| JavaScript | Frontend interaction |
+| Docker | Containerized deployment |
+
+---
+
+## System Architecture
+
+User Input (Image / Video / Webcam)  
+↓  
+Hand Detection (MediaPipe)  
+↓  
+Image Preprocessing  
+↓  
+CNN Deep Learning Model  
+↓  
+Gesture Classification  
+↓  
+Text Output  
+↓  
+Speech Output (Optional)  
 
 ---
 
 ## Project Structure
+
+
 GestureTalk_AI/
-│── app.py
-│── templates/
-│── static/
-│── data/
-│── requirements.txt
-│── README.md
+│
+├── app.py
+├── README.md
+│
+├── static/
+│ ├── script.js
+│ └── style.css
+│
+├── templates/
+│ └── index.html
+│
+├── data/
+│
+└── uploads/
+
+
+---
+
+## Dataset
+The dataset is not included in this repository due to file size limitations.
+
+After downloading the dataset, place it inside the project folder as shown below:
+
+
+GestureTalk_AI/
+│
+├── data/
+│ ├── A/
+│ ├── B/
+│ ├── C/
+│ └── ...
+
+
+Each folder represents a gesture class used for training.
+
+---
+
+## Model File (modelnet_model.h5)
+The trained model file is not included in this repository.
+
+When the application runs:
+- If the model file exists → it will be loaded  
+- If it does not exist → the system will train a new model automatically  
+
+The trained model will be saved as:
+
+modelnet_model.h5
+
 
 ---
 
@@ -44,76 +116,74 @@ GestureTalk_AI/
 
 ### Step 1: Clone the Repository
 
-git clone https://github.com/YOUR-USERNAME/GestureTalk_AI.git
+git clone https://github.com/YOUR_USERNAME/GestureTalk_AI.git
 
 cd GestureTalk_AI
 
+
 ### Step 2: Create Virtual Environment
+
+python -m venv venv
+
+
+### Step 3: Activate Virtual Environment
+
+Windows:
+
+venv\Scripts\activate
+
+
+Mac/Linux:
+
+source venv/bin/activate
+
+
+### Step 4: Install Dependencies
 
 pip install -r requirements.txt
 
+
 ---
 
-## How to Run the Project
+## Run the Application
 
 python app.py
+
 
 Open your browser and go to:
 
 http://127.0.0.1:5000
 
+
 ---
 
 ## Usage
 
-### Live Webcam Mode
-- Click on "Live Webcam"  
-- Click on "Translate"  
-- Show hand gestures clearly  
-
 ### Upload Mode
-- Upload an image or video  
-- View predicted output  
+Upload an image or video containing sign language gestures.
 
----
+### Live Webcam Mode
+Use your webcam to perform gestures and receive real-time predictions.
 
-## Model Details
-- Pretrained Model: MobileNetV2  
-- Input Size: 224 × 224  
-- Optimizer: Adam  
-- Loss Function: Categorical Crossentropy  
-- Dataset: Custom hand gesture dataset  
-
----
-
-## Limitations
-- Accuracy depends on lighting conditions  
-- Requires clear hand visibility  
-- Similar gestures may reduce accuracy  
+The system will detect gestures and convert them into text.
 
 ---
 
 ## Future Improvements
-- Automatic word formation from letters  
-- Improved accuracy using hand landmarks  
-- Multi-hand detection  
-- Mobile application deployment  
+- Support for full sign language vocabulary  
+- Improved model accuracy with larger datasets  
+- Mobile application integration  
+- Real-time sentence prediction using NLP  
+- Multilingual speech output  
 
 ---
 
 ## Author
 Shrinath Khot  
-Aspiring Data Scientist and Data Analyst  
+B.Tech Computer Engineering  
+Aspiring Data Scientist  
 
 ---
 
 ## Conclusion
-GestureTalk AI demonstrates the practical use of Artificial Intelligence and Computer Vision in building assistive technologies. It provides an effective approach for real-time sign language recognition.
-
-Next step
-
-After pasting:
-
-git add .
-git commit -m "updated README professionally"
-git push
+GestureTalk AI demonstrates the application of Artificial Intelligence and 
