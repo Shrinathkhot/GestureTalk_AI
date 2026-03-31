@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GestureTalk AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+.icon {
+    width:18px;
+    vertical-align:middle;
+    margin-right:6px;
+}
+.title-icon {
+    width:35px;
+    vertical-align:middle;
+    margin-right:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- Title -->
+<h1>
+<img src="{{ url_for('static', filename='sign-language.png') }}" class="title-icon">
+GestureTalk <span class="ai">AI</span>
+</h1>
+
+<p class="subtitle">A Smart Sign Language Recognition System Using Computer Vision</p>
+
+<!-- Tabs -->
+<div class="tabs">
+<button id="uploadTab" class="active">
+<img src="{{ url_for('static', filename='folder.png') }}" class="icon">
+Upload
+</button>
+
+<button id="liveTab">
+<img src="{{ url_for('static', filename='webcam.png') }}" class="icon">
+Live Webcam
+</button>
+</div>
+
+<!-- Upload Section -->
+<div id="uploadSection" class="section">
+
+<div id="dropZone">
+<p>
+<img src="{{ url_for('static', filename='drop.png') }}" class="icon">
+Drag & Drop or Click to Upload
+</p>
+
+<input type="file" id="mediaUpload" accept="video/*, image/*" hidden>
+</div>
+
+<div id="preview"></div>
+
+</div>
+
+<!-- Webcam Section -->
+<div id="liveSection" class="section hidden">
+
+<video id="webcam" autoplay playsinline muted></video>
+
+</div>
+
+<!-- Predict Button -->
+<button id="predictBtn">
+Translate
+</button>
+
+<!-- Loader -->
+<div id="loader" class="hidden">
+<img src="{{ url_for('static', filename='load.png') }}" class="icon">
+Processing...
+</div>
+
+<!-- Output -->
+<div class="output">
+
+<h3>Sentence Output</h3>
+
+<div id="result">---</div>
+
+<div id="confidence">Confidence: --</div>
+
+</div>
+
+<!-- Controls -->
+<div class="controls">
+
+<button onclick="speakText()">
+<img src="{{ url_for('static', filename='volume-up.png') }}" class="icon">
+Speak
+</button>
+
+<button onclick="resetText()">
+<img src="{{ url_for('static', filename='refresh.png') }}" class="icon">
+Reset
+</button>
+
+</div>
+
+<!-- History -->
+<div class="history">
+
+<h3>Detected Letters</h3>
+
+<ul id="historyList"></ul>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
