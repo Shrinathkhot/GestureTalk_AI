@@ -186,4 +186,4 @@ Aspiring Data Scientist
 ---
 
 ## Conclusion
-GestureTalk AI demonstrates the application of Artificial Intelligence and 
+GestureTalk AI demonstrates the application of Artificial Intelligence and Computer Vision in building assistive technologies. It provides an effective approach for real-time sign language recognition.
